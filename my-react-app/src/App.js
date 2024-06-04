@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './App.css';
 
-const Home = () => <div>Home Page</div>;
-const About = () => <div>About Page</div>;
-const Projects = () => <div>Projects Page</div>;
+const Home = () => <h1></h1>;
+const About = () => <h1></h1>;
+const Projects = () => <h1></h1>;
 
 function App() {
   return (
