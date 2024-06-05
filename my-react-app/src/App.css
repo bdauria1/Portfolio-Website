@@ -1,54 +1,50 @@
-/* Basic reset to remove default browser styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  background-color: #1e2127;
+  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
 }
 
 .App {
-  text-align: center;
+  text-align: left; /* Change text alignment to left */
 }
 
 .App-header {
   background-color: #282c34;
   padding: 20px;
-  color: white;
-}
-
-nav ul {
-  list-style: none;
   display: flex;
-  justify-content: left;
+  align-items: center; /* Center align items vertically */
+}
+
+.App-header nav ul {
+  list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
 }
 
-nav li {
-  margin: 0 15px;
+.App-header nav ul li {
+  margin-right: 20px; /* Add margin to the right of each link */
 }
 
-nav a {
+.App-header nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-main {
+.home {
+  color: white;
   padding: 20px;
 }
 
-main div {
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.feature {
+  border: 1px solid #ddd;
   padding: 20px;
-  border-radius: 8px;
-  margin: 20px auto;
-  max-width: 800px;
+  width: 30%;
 }

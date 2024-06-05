@@ -1,10 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import ReactTypingEffect from 'react-typing-effect';
 import './App.css';
 
-const Home = () => <h1></h1>;
-const About = () => <h1></h1>;
-const Projects = () => <h1></h1>;
+const Home = () => (
+  <div className="home">
+    <h1>
+      <ReactTypingEffect
+        text={["Welcome to My Website!", "Discover my projects and learn more about what I do."]}
+        speed={100}
+        eraseSpeed={50}
+        eraseDelay={2000}
+        typingDelay={500}
+      />
+    </h1>
+  </div>
+);
+
+const About = () => <h1>About Me</h1>;
+const Projects = () => <h1>Projects</h1>;
 
 function App() {
   return (
