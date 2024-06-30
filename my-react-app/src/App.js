@@ -1,10 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ReactTypingEffect from 'react-typing-effect';
 import './App.css';
 
 const Home = () => (
-  <div className="home">
+  <div className="section">
     <h1>
       <ReactTypingEffect
         text={["Welcome to My Website!", "Discover my projects and learn more about what I do."]}
@@ -17,37 +16,57 @@ const Home = () => (
   </div>
 );
 
-const About = () => <h1>About Me</h1>;
-const Projects = () => <h1>Projects</h1>;
+const About = () => (
+  <div className="section">
+    <h1>About Me</h1>
+    <p>Here is some information about me...</p>
+  </div>
+);
+
+const Projects = () => (
+  <div className="section">
+    <h1>Projects</h1>
+    <div className="project-list">
+      <div className="project">
+        <h2>Project 1</h2>
+        <p>Description of Project 1...</p>
+      </div>
+      <div className="project">
+        <h2>Project 2</h2>
+        <p>Description of Project 2...</p>
+      </div>
+      <div className="project">
+        <h2>Project 3</h2>
+        <p>Description of Project 3...</p>
+      </div>
+    </div>
+  </div>
+);
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <header className="App-header">
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/projects">Projects</Link>
-              </li>
-            </ul>
-          </nav>
-        </header>
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+    <div className="App">
+      <header className="App-header">
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section id="home">
+          <Home />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+      </main>
+    </div>
   );
 }
 
