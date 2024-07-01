@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #1e2127;
   margin: 0;
@@ -5,14 +9,14 @@ body {
 }
 
 .App {
-  text-align: left; /* Change text alignment to left */
+  text-align: left;
 }
 
 .App-header {
   background-color: #282c34;
   padding: 20px;
   display: flex;
-  align-items: center; /* Center align items vertically */
+  align-items: center;
 }
 
 .App-header nav ul {
@@ -24,17 +28,26 @@ body {
 }
 
 .App-header nav ul li {
-  margin-right: 20px; /* Add margin to the right of each link */
+  margin-right: 20px;
 }
 
 .App-header nav ul li a {
   color: white;
   text-decoration: none;
+  font-size: 2rem;
 }
 
 .section {
   color: white;
   padding: 20px;
+}
+
+.section h1 {
+  font-size: 6rem;
+}
+
+.section p {
+  font-size: 2rem; 
 }
 
 .features {
@@ -47,4 +60,28 @@ body {
   border: 1px solid #ddd;
   padding: 20px;
   width: 30%;
+}
+
+.home-section {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  height: 95vh;
+}
+
+.about-section {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  height: 110vh;
+}
+
+.project-section {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  height: 95vh;
 }
