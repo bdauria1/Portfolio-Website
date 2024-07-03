@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactTypingEffect from 'react-typing-effect';
 import './App.css';
 
@@ -16,23 +16,65 @@ const Home = () => (
   </div>
 );
 
-const About = () => (
-  <div className="section about-section">
-    <h1>About Me</h1>
-    <p>👋 I'm a Computer Science graduate from Boston University with an insatiable curiosity for learning and a deep passion for technology. My journey into the world of programming began over five years ago, and I've been captivated by the endless possibilities it offers ever since.
+const About = () => {
+  const aboutRef = useRef(null);
 
-💻 Throughout my academic and professional journey, I've immersed myself in the world of software development, exploring its complexities and pushing its boundaries. From delving into the inner workings of algorithms to designing and building robust systems, I thrive on the challenges and opportunities that computer science presents.
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          aboutRef.current.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
 
-🚀 My experience includes invaluable stints at early-stage startups like GigChomp and Project Alexandria, where I had the privilege of contributing to innovative projects and collaborating with talented individuals. These roles have honed my skills and ignited my passion for creating impactful technology solutions.
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
 
-🔍 As I step into the next phase of my career, I am eager to connect with like-minded professionals, explore new opportunities, and make meaningful contributions to the ever-evolving landscape of software development.
+    return () => {
+      if (aboutRef.current) {
+        observer.unobserve(aboutRef.current);
+      }
+    };
+  }, []);
 
-Let's connect and embark on this exciting journey together! 🌟</p>
-  </div>
-);
+  return (
+    <div ref={aboutRef} className="section about-section">
+      <div className="about-content">
+        <h1>About Me</h1>
+        <p className="intro">👋 Hi there! I'm a passionate Computer Science graduate from Boston University, constantly exploring the world of technology and its endless possibilities.</p>
+        <div className="details">
+          <h2>My Journey</h2>
+          <p>💻 Over the past five years, I've delved into the intricacies of software development, from understanding algorithms to building robust systems. My experiences at startups like GigChomp and Project Alexandria have been invaluable in shaping my skills.</p>
+          <h2>What's Next</h2>
+          <p>🚀 As I look ahead, I'm eager to connect with like-minded professionals and contribute to innovative projects in the software development landscape. Let's create impactful technology solutions together!</p>
+        </div>
+      </div>
+      <div className="cool-object">
+        <CoolObject />
+      </div>
+    </div>
+  );
+};
+
+const CoolObject = () => {
+  return (
+    <div className="cube">
+      <div className="face front"></div>
+      <div className="face back"></div>
+      <div className="face left"></div>
+      <div className="face right"></div>
+      <div className="face top"></div>
+      <div className="face bottom"></div>
+    </div>
+  );
+};
 
 const Projects = () => (
-  <div className="section projects-section">
+  <div className="section project-section">
     <h1>Projects</h1>
     <div className="project-list">
       <div className="project">
