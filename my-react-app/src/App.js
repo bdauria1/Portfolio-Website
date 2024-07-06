@@ -78,27 +78,49 @@ const Projects = () => (
       <div className="project-card">
         <h2>Project 1: Nutrition Application</h2>
         <p>• Developed a React application integrating Yelp and Nutritionix APIs to fetch and display data, using
-Axios for promise-based HTTP requests.</p>
+        Axios for promise-based HTTP requests.</p>
         <p>• Managed application state with React Hooks (useState, useRef, useEffect) to handle places, nutrients, meals, and
         locations, ensuring efficient state changes and data fetching.</p>
-        <a href="https://github.com/your-username/project1" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/krisch0u/cs411" target="_blank" rel="noopener noreferrer">
           View on GitHub
         </a>
       </div>
       <div className="project-card">
-        <h2>Project 2</h2>
-        <p>Description of Project 2...</p>
-        <a href="https://github.com/your-username/project2" target="_blank" rel="noopener noreferrer">
+        <h2>Project 2: Logistical Web Application</h2>
+        <p>• Created a dynamic web application with Flask and MySQL, enabling users to register accounts, share photos,
+        manage albums, connect with friends, and engage with content through likes and comments.</p>
+        <p>• Integrated Python, HTML, and CSS to create visually appealing and responsive web pages, enhancing the user
+        experience</p>
+        <a href="https://github.com/bdauria1/cs460" target="_blank" rel="noopener noreferrer">
           View on GitHub
         </a>
       </div>
       <div className="project-card">
-        <h2>Project 3</h2>
-        <p>Description of Project 3...</p>
-        <a href="https://github.com/your-username/project3" target="_blank" rel="noopener noreferrer">
+        <h2>Project 3: Project Alexandria</h2>
+        <p>• Worked with a startup called Biblio.io, a freelance site that connects freelancers with clients.</p>
+        <p>• Collaborated with a team of developers to build the frontend and backend of the platform using React.</p>
+        <a href="https://github.com/bdauria1/Project-Alexandria" target="_blank" rel="noopener noreferrer">
           View on GitHub
         </a>
       </div>
+    </div>
+  </div>
+);
+
+const Contact = () => (
+  <div className="section contact-section">
+    <h1>Contact Me</h1>
+    <div className="contact-links">
+      <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
+        <i className="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:your-email@gmail.com">
+        <i className="fas fa-envelope"></i>
+      </a>
+      <a href=" github.com/krisch0u" target="_blank" rel="noopener noreferrer">
+        <i className="fab fa-github"></i>
+      </a>
+
     </div>
   </div>
 );
@@ -112,6 +134,7 @@ function App() {
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </header>
@@ -124,6 +147,9 @@ function App() {
         </section>
         <section id="projects">
           <Projects />
+        </section>
+        <section id="contact">
+          <Contact />
         </section>
       </main>
     </div>
