@@ -109,7 +109,7 @@ const Projects = () => (
 
 const Contact = () => (
   <div className="section contact-section">
-    <h1>Contact Me</h1>
+    <h2>Contact Me</h2>
     <div className="contact-links">
       <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
         <i className="fab fa-linkedin"></i>
