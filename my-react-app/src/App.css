@@ -1,3 +1,4 @@
+/* General styles */
 html {
   scroll-behavior: smooth;
 }
@@ -37,6 +38,7 @@ body {
   font-size: 2rem;
 }
 
+/* Sections */
 .section {
   color: white;
   padding: 20px;
@@ -67,7 +69,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 95vh;
+  min-height: 95vh; /* Changed to min-height for better responsiveness */
 }
 
 .project-section {
@@ -76,7 +78,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 40px 20px;
-  height: 75vh;
+  min-height: 75vh; /* Changed to min-height for better responsiveness */
 }
 
 .project-section h1 {
@@ -85,9 +87,11 @@ body {
 
 .project-list {
   display: flex;
-  flex-direction: row;
-  gap: 100px;
-  max-width: 3000px;
+  flex-wrap: nowrap; /* Ensure items stay in a single row */
+  justify-content: center;
+  gap: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling on small screens */
+  padding-bottom: 20px; /* Add padding to handle horizontal scrolling */
 }
 
 .project-card {
@@ -95,8 +99,8 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 40px;
-  width: 100%;
-  height: 85%;
+  width: 80%; /* Adjusted width for better responsiveness */
+  max-width: 400px; /* Limit maximum width for smaller screens */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -125,52 +129,13 @@ body {
   text-decoration: underline;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.about-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.about-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.about-section h1 {
-  animation: fadeIn 1s ease-in-out;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.about-section p,
-.about-section h2,
-.about-section ul {
-  animation: fadeIn 1s ease-in-out;
-  animation-delay: 1s;
-  animation-fill-mode: backwards;
-  max-width: 1000px;
-  margin: 0 auto;
-  line-height: 3;
-}
-
+/* About section */
 .about-section {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: left;
-  height: 110vh;
+  min-height: 110vh; /* Changed to min-height for better responsiveness */
   color: white;
   padding: 40px 20px;
 }
@@ -188,6 +153,7 @@ body {
   padding-left: 20px;
 }
 
+/* Cube animation */
 .cube {
   width: 500px;
   height: 500px;
@@ -236,6 +202,7 @@ body {
   }
 }
 
+/* Contact section */
 .contact-section {
   background-color: #2a2e35;
   color: #ffffff;
@@ -243,10 +210,10 @@ body {
   padding: 7px 20px;
   display: flex;
   flex-direction: row;
-  align-items: left;
+  align-items: center;
 }
 
-.contact-section h2{
+.contact-section h2 {
   margin-right: 20px;
 }
 
@@ -270,4 +237,29 @@ body {
 
 .contact-links i {
   margin-right: 10px;
+}
+
+/* Media Queries */
+@media (min-width: 1200px) {
+  .project-card {
+    width: 30%; /* Adjusted width for larger screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .project-card {
+    width: 45%; /* Adjusted width for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    width: 70%; /* Adjusted width for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .project-card {
+    width: 80%; /* Adjusted width for extra small screens */
+  }
 }
