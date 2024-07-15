@@ -111,16 +111,15 @@ const Contact = () => (
   <div className="section contact-section">
     <h2>Contact Me</h2>
     <div className="contact-links">
-      <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/bdauria" target="_blank" rel="noopener noreferrer">
         <i className="fab fa-linkedin"></i>
       </a>
-      <a href="mailto:your-email@gmail.com">
+      <a href="mailto:b.dauria24@gmail.com">
         <i className="fas fa-envelope"></i>
       </a>
-      <a href=" github.com/krisch0u" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/bdauria1" target="_blank" rel="noopener noreferrer">
         <i className="fab fa-github"></i>
       </a>
-
     </div>
   </div>
 );
