@@ -91,7 +91,7 @@ const Projects = () => (
         manage albums, connect with friends, and engage with content through likes and comments.</p>
         <p>• Integrated Python, HTML, and CSS to create visually appealing and responsive web pages, enhancing the user
         experience</p>
-        <a href="https://github.com/bdauria1/cs460" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/bdauria1/Flask-Web-Application" target="_blank" rel="noopener noreferrer">
           View on GitHub
         </a>
       </div>
