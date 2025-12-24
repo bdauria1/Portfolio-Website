@@ -1,13 +1,149 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Water Theme Animations */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes bubble {
+  0% {
+    bottom: -10px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Water-themed background */
+body {
+  background: linear-gradient(135deg, #001a4d 0%, #003d99 25%, #0066ff 50%, #00ccff 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  position: relative;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Wave background effect */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" fill="rgba(0,150,200,0.1)" opacity="0.3"/><path d="M0,60 Q300,20 600,60 T1200,60 L1200,120 L0,120 Z" fill="rgba(0,200,255,0.1)" opacity="0.2"/></svg>') repeat-x;
+  background-size: 600px 120px;
+  animation: wave 8s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.App {
+  position: relative;
+  z-index: 1;
+}
+
+/* Home section with bubbles */
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+.home-section::before,
+.home-section::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.8), rgba(0, 150, 200, 0.2));
+  border-radius: 50%;
+  animation: bubble 8s infinite ease-in;
+}
+
+.home-section::before {
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.home-section::after {
+  right: 15%;
+  animation-delay: 4s;
+}
+
+/* About section with glass morphism */
+.about-section {
+  background: rgba(0, 100, 200, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 200, 255, 0.3);
+}
+
+.about-section h1 {
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.about-section p {
+  color: #b3e5fc;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+}
+
+/* Project cards with water ripple effect */
+.project-card {
+  background: rgba(0, 80, 180, 0.15);
+  border: 2px solid rgba(0, 200, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  border-color: rgba(0, 255, 255, 0.8);
+}
+
+/* Links with water glow */
+a {
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+a:hover {
+  color: #ffff99;
+  text-shadow: 0 0 15px rgba(255, 255, 150, 0.8);
 }
