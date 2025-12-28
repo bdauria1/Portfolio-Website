@@ -137,7 +137,7 @@ const About = () => {
             </ul>
           </div>
           <div className="resume-button-container">
-              <a href="/resume.pdf" download className="btn btn-primary">
+              <a href="/Resume.pdf" download className="btn btn-primary">
                 Download My Resume
               </a>
             </div>
